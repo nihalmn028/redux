@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+// import { Provider } from "react-redux";
 
-function App() {
+// import Store from './Components/Store';
+// import CounterComponent from "./Components/CounterComponent";
+// import Component1 from "./Components/Component1";
+// import Component2 from "./Components/Component2";
+// import Component3 from "./Components/Component3";
+
+
+// const App=()=> {
+//   return (
+
+
+// <Provider store={Store}>
+// <CounterComponent/>
+// {/* <Component1/>
+// <Component2/>
+// <Component3/> */}
+
+// </Provider>
+    
+//   );
+// }
+
+// export default App;
+
+import React from 'react';
+import { Provider } from 'react-redux';
+import TodoApp from './Components/CounterComponent'
+import CounterComponent from './Components/CounterComponent';
+import CounterButton from './CounterButton';
+import store from './Components/Store'
+import Buttons from './Buttons';
+import Members from './Members';
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      {/* <TodoApp /> */}
+      <Buttons/>
+      <Members/>
+{/* <CounterButton/>    */}
+ </Provider>
   );
-}
+};
 
 export default App;
